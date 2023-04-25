@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cw00fv647rolf"]
+[gd_scene load_steps=10 format=3 uid="uid://cw00fv647rolf"]
 
 [ext_resource type="Texture2D" uid="uid://deoqyeme8qfdj" path="res://assets/sprites/tilesets/plains.png" id="1_hvjs3"]
 [ext_resource type="Texture2D" uid="uid://bm8emt8aiyq3u" path="res://assets/sprites/tilesets/grass.png" id="2_1ujdu"]
 [ext_resource type="Texture2D" uid="uid://bxenar7xjx43v" path="res://assets/sprites/objects/objects.png" id="3_34ay1"]
 [ext_resource type="PackedScene" uid="uid://xhxmbu1b3m82" path="res://actors/player/player.tscn" id="4_0t8i7"]
+[ext_resource type="PackedScene" uid="uid://x5i47fx1xlsq" path="res://actors/slime/slime.tscn" id="5_v34lx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2818u"]
 texture = ExtResource("1_hvjs3")
@@ -188,3 +189,17 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("4_0t8i7")]
 position = Vector2(404, 390)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Slime" parent="Enemies" instance=ExtResource("5_v34lx")]
+position = Vector2(289, 216)
+
+[node name="Slime2" parent="Enemies" instance=ExtResource("5_v34lx")]
+position = Vector2(182, 416)
+
+[node name="Slime3" parent="Enemies" instance=ExtResource("5_v34lx")]
+position = Vector2(533, 514)
+
+[node name="Slime4" parent="Enemies" instance=ExtResource("5_v34lx")]
+position = Vector2(721, 124)
