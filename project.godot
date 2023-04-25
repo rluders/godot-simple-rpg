@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Godot-simple-rpg"
+config/name="Simple RPG"
+config/description="This is DevWorm's tutorial \"How to Create an RPG in Godot 4\" with steroids."
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
