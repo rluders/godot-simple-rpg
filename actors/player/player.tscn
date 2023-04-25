@@ -277,6 +277,8 @@ _data = {
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "anim_tree")]
 z_index = 1
 y_sort_enabled = true
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_22mku")
 anim_player = NodePath("AnimationPlayer")
 anim_tree = NodePath("AnimationTree")
@@ -286,6 +288,7 @@ position = Vector2(2.08165e-12, -15)
 texture = ExtResource("1_4r71g")
 hframes = 6
 vframes = 10
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
