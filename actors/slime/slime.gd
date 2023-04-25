@@ -19,9 +19,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _on_detection_area_target_found(target) -> void:
+func _on_detection_area_target_found(target: Node2D) -> void:
 	chase_target = target
 
 
-func _on_detection_area_target_lost(target) -> void:
+func _on_detection_area_target_lost(_target: Node2D) -> void:
 	chase_target = null

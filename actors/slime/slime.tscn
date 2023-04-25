@@ -1,8 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://x5i47fx1xlsq"]
+[gd_scene load_steps=24 format=3 uid="uid://bbu0oy1yyrdsh"]
 
 [ext_resource type="Script" path="res://actors/slime/slime.gd" id="1_af3cn"]
 [ext_resource type="Texture2D" uid="uid://bwuhwa5tp1o0j" path="res://assets/sprites/characters/slime.png" id="2_tphau"]
 [ext_resource type="PackedScene" uid="uid://bmixqgia6qee0" path="res://actors/components/detection_area.tscn" id="3_jidwr"]
+[ext_resource type="PackedScene" uid="uid://k6axntht1gyu" path="res://actors/components/combat/hitbox.tscn" id="4_28a0m"]
+[ext_resource type="Resource" uid="uid://b4e15fax57nc0" path="res://actors/slime/hit.tres" id="5_lkw1f"]
+[ext_resource type="PackedScene" uid="uid://b5o1a4ii1yd8d" path="res://actors/components/combat/hurtbox.tscn" id="5_qs4bc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h2ma1"]
 radius = 4.0
@@ -111,11 +114,19 @@ graph_offset = Vector2(-4, 28)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_y1s54"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dtlsx"]
-radius = 58.14
+[sub_resource type="CircleShape2D" id="CircleShape2D_uyxaa"]
+radius = 62.0725
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rswap"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_syiy6"]
+radius = 7.0
 
 [node name="Slime" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "anim_tree")]
 y_sort_enabled = true
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_af3cn")
 acceleration = 200.0
 max_speed = 60.0
@@ -126,9 +137,9 @@ anim_tree = NodePath("AnimationTree")
 texture = ExtResource("2_tphau")
 hframes = 7
 vframes = 5
-frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_h2ma1")
 
@@ -144,7 +155,27 @@ active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_y1s54")
 
 [node name="DetectionArea" parent="." instance=ExtResource("3_jidwr")]
-shape = SubResource("CircleShape2D_dtlsx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+visible = false
+shape = SubResource("CircleShape2D_uyxaa")
+
+[node name="Hurtbox" parent="." groups=["enemy"] instance=ExtResource("5_qs4bc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_rswap")
+debug_color = Color(0.917647, 0.227451, 0.45098, 0.419608)
+
+[node name="Hitbox" parent="." instance=ExtResource("4_28a0m")]
+hit = ExtResource("5_lkw1f")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_syiy6")
+debug_color = Color(0.611765, 0.537255, 0, 0.419608)
 
 [connection signal="target_found" from="DetectionArea" to="." method="_on_detection_area_target_found"]
 [connection signal="target_lost" from="DetectionArea" to="." method="_on_detection_area_target_lost"]
+
+[editable path="Hitbox"]

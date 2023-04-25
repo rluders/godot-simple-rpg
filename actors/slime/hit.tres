@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="HitResource" load_steps=2 format=3 uid="uid://b4e15fax57nc0"]
+
+[ext_resource type="Script" path="res://actors/components/combat/hit_resource.gd" id="1_7mgj8"]
+
+[resource]
+script = ExtResource("1_7mgj8")
+damage = 1.0
+team = "enemy"
+type = "physical"
