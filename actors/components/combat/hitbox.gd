@@ -7,7 +7,7 @@ signal hit_landed
 
 @export var hit : HitResource
 
-var _active = false
+var _active : bool = false
 
 
 func enable() -> void:
@@ -26,6 +26,8 @@ func set_shape_disabled(value: bool) -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
+	if not _active:
+		return
 	if not area.has_method("get_hurt"):
 		return
 	
