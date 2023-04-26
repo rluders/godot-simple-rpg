@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_7mgj8")
-damage = 50.0
+damage = 2.0
 team = "enemy"
 type = "physical"

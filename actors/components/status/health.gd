@@ -13,14 +13,12 @@ var health : float = 100
 
 func _ready() -> void:
 	health = max_health
-	print("HealhComponent")
 
 
 func damage(amount: float) -> void:
 	var old_health = health
 	health = clamp(health - amount, 0, max_health)
 	health_changed.emit(old_health, health)
-	print(health)
 	if health <= 0:
 		health_depleted.emit()
 

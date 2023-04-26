@@ -18,7 +18,6 @@ var invicible_timer : Timer = Timer.new()
 func _ready() -> void:
 	invicible_timer.one_shot = true
 	add_child(invicible_timer)
-	print("Hurtbox")
 
 
 func get_hurt(hit: HitResource) -> void:
