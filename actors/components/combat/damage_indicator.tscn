@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb2t8u6p2bqr"]
+
+[ext_resource type="Script" path="res://actors/components/combat/damage_indicator.gd" id="1_edr7e"]
+[ext_resource type="PackedScene" uid="uid://clxtr8ufs1ukd" path="res://actors/components/combat/damage_indicator_text.tscn" id="2_hw8g4"]
+
+[node name="DamageIndicatorText" type="Marker2D"]
+position = Vector2(0, -5)
+script = ExtResource("1_edr7e")
+damage_text = ExtResource("2_hw8g4")
