@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cw00fv647rolf"]
+[gd_scene load_steps=11 format=3 uid="uid://cw00fv647rolf"]
 
 [ext_resource type="Texture2D" uid="uid://deoqyeme8qfdj" path="res://assets/sprites/tilesets/plains.png" id="1_hvjs3"]
 [ext_resource type="Texture2D" uid="uid://bm8emt8aiyq3u" path="res://assets/sprites/tilesets/grass.png" id="2_1ujdu"]
 [ext_resource type="Texture2D" uid="uid://bxenar7xjx43v" path="res://assets/sprites/objects/objects.png" id="3_34ay1"]
-[ext_resource type="PackedScene" uid="uid://cd826bbavdj0o" path="res://actors/player/player.tscn" id="4_0t8i7"]
+[ext_resource type="PackedScene" uid="uid://c5qfn2bdu4av8" path="res://actors/player/player.tscn" id="4_0t8i7"]
+[ext_resource type="PackedScene" uid="uid://c7xys4tvomgme" path="res://actors/player/following_camera.tscn" id="5_fq4ib"]
 [ext_resource type="PackedScene" uid="uid://bbu0oy1yyrdsh" path="res://actors/slime/slime.tscn" id="5_v34lx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2818u"]
@@ -189,6 +190,12 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("4_0t8i7")]
 position = Vector2(404, 390)
+
+[node name="FollowingCamera" parent="Player" node_paths=PackedStringArray("tilemap") instance=ExtResource("5_fq4ib")]
+zoom = Vector2(4, 4)
+limit_left = 0
+limit_top = 0
+tilemap = NodePath("../../TileMap")
 
 [node name="Enemies" type="Node2D" parent="."]
 
