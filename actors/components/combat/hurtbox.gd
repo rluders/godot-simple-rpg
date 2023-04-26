@@ -3,7 +3,7 @@ class_name Hurtbox
 extends Area2D
 # Hurtbox is part of an actor's body that can be damaged when it touch a Hitbox.
 
-signal damage_received(amout: float)
+signal damage_received(amount: float)
 
 var is_invincible = false :
 	set(value):
