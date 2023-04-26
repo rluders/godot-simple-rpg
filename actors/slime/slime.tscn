@@ -177,5 +177,3 @@ debug_color = Color(0.611765, 0.537255, 0, 0.419608)
 
 [connection signal="target_found" from="DetectionArea" to="." method="_on_detection_area_target_found"]
 [connection signal="target_lost" from="DetectionArea" to="." method="_on_detection_area_target_lost"]
-
-[editable path="Hitbox"]

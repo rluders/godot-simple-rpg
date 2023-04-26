@@ -1,9 +1,10 @@
-[gd_scene load_steps=37 format=3 uid="uid://xhxmbu1b3m82"]
+[gd_scene load_steps=38 format=3 uid="uid://cd826bbavdj0o"]
 
 [ext_resource type="Texture2D" uid="uid://dj5fk6vkdvrr2" path="res://assets/sprites/characters/player.png" id="1_4r71g"]
 [ext_resource type="Script" path="res://actors/player/player.gd" id="1_22mku"]
-[ext_resource type="Script" path="res://actors/components/combat/hurtbox.gd" id="3_8cheh"]
-[ext_resource type="Script" path="res://actors/components/combat/hitbox.gd" id="4_yujrm"]
+[ext_resource type="PackedScene" uid="uid://k6axntht1gyu" path="res://actors/components/combat/hitbox.tscn" id="3_fxppv"]
+[ext_resource type="PackedScene" uid="uid://12eagfws4yva" path="res://actors/components/status/health.tscn" id="3_u7rq0"]
+[ext_resource type="PackedScene" uid="uid://b5o1a4ii1yd8d" path="res://actors/components/combat/hurtbox.tscn" id="4_3rkdp"]
 [ext_resource type="Resource" uid="uid://bjpn05gwgfsen" path="res://actors/player/hit.tres" id="5_g81a0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x56j"]
@@ -61,16 +62,14 @@ blend_mode = 1
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_burvr"]
-advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_be5vg"]
-advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_8oudo"]
 states/Attack/node = SubResource("AnimationNodeBlendSpace2D_clris")
 states/Attack/position = Vector2(502, 351)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_bou2t")
-states/Idle/position = Vector2(493, 67)
+states/Idle/position = Vector2(497, 66)
 states/Start/position = Vector2(178, 100)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_hbyew")
 states/Walk/position = Vector2(497, 205)
@@ -298,7 +297,7 @@ position = Vector2(2.08165e-12, -15)
 texture = ExtResource("1_4r71g")
 hframes = 6
 vframes = 10
-frame = 1
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
@@ -318,24 +317,25 @@ libraries = {
 "": SubResource("AnimationLibrary_c3pdp")
 }
 
-[node name="Hurtbox" type="Area2D" parent="." groups=["player"]]
-collision_layer = 8192
-collision_mask = 4096
-script = ExtResource("3_8cheh")
+[node name="Hurtbox" parent="." node_paths=PackedStringArray("health_component") groups=["player"] instance=ExtResource("4_3rkdp")]
+health_component = NodePath("../Statuses/Health")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(0, -6)
 shape = SubResource("CapsuleShape2D_8ysw7")
 debug_color = Color(0.917647, 0.227451, 0.45098, 0.419608)
 
-[node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 4096
-collision_mask = 8192
-script = ExtResource("4_yujrm")
+[node name="Hitbox" parent="." instance=ExtResource("3_fxppv")]
 hit = ExtResource("5_g81a0")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-2.13163e-14, 6)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_aqqc5")
 debug_color = Color(0.611765, 0.537255, 0, 0.419608)
+
+[node name="Statuses" type="Node" parent="."]
+
+[node name="Health" parent="Statuses" instance=ExtResource("3_u7rq0")]
+
+[connection signal="health_depleted" from="Statuses/Health" to="." method="_on_health_health_depleted"]

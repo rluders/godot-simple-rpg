@@ -1,28 +1,21 @@
+@icon("res://actors/components/combat/hitbox.png")
 class_name Hitbox
 extends Area2D
+# Hitbox is part of an attack that can damage an actor when it touch their Hurtbox.
 
-
-signal hit_started
-signal hit_finished
 signal hit_landed
-signal hit_missed
 
 @export var hit : HitResource
 
-var _is_hit_landed = false
 var _active = false
 
 
 func enable() -> void:
-	_is_hit_landed = false
-	hit_started.emit()
 	set_shape_disabled(false)
 	_active = true
 
 
 func disable() -> void:
-	if not _is_hit_landed:
-		hit_missed.emit()
 	set_shape_disabled(true)
 	_active = false
 

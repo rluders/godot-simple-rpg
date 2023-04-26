@@ -6,6 +6,9 @@ extends Actor
 
 
 func _physics_process(delta: float) -> void:
+	if not is_alive:
+		return
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := get_direction()
@@ -26,3 +29,12 @@ func _physics_process(delta: float) -> void:
 
 func get_direction() -> Vector2:
 	return Input.get_vector("move_left", "move_right", "move_up", "move_down")
+
+
+func _on_health_health_depleted() -> void:
+	is_alive = false
+	# TODO How can I use anim_state here?
+	anim_tree.active = false
+	anim_player.play("death")
+	await anim_player.animation_finished
+	queue_free()
