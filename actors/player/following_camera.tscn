@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7xys4tvomgme"]
+
+[ext_resource type="Script" path="res://actors/player/following_camera.gd" id="1_51cg8"]
+
+[node name="FollowingCamera" type="Camera2D"]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("1_51cg8")
