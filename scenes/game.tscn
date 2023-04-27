@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmpr237vrfxwh"]
+
+[ext_resource type="PackedScene" uid="uid://c5qfn2bdu4av8" path="res://actors/player/player.tscn" id="2_daqma"]
+[ext_resource type="PackedScene" uid="uid://dv80br81ts75r" path="res://scenes/level1.tscn" id="2_mjt6j"]
+[ext_resource type="PackedScene" uid="uid://c7xys4tvomgme" path="res://actors/player/following_camera.tscn" id="3_veamr"]
+[ext_resource type="PackedScene" uid="uid://c8aloe8fjvwr4" path="res://scenes/components/transition_effect.tscn" id="4_hgddd"]
+
+[node name="Game" type="Node"]
+
+[node name="TransitionEffect" parent="." instance=ExtResource("4_hgddd")]
+process_mode = 3
+z_index = 99
+
+[node name="World" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="LevelRoot" type="Node2D" parent="World"]
+y_sort_enabled = true
+
+[node name="Level1" parent="World/LevelRoot" instance=ExtResource("2_mjt6j")]
+
+[node name="Player" parent="World" instance=ExtResource("2_daqma")]
+position = Vector2(349, 615)
+
+[node name="FollowingCamera" parent="World/Player" instance=ExtResource("3_veamr")]
+zoom = Vector2(4, 4)
+limit_left = 0
+limit_top = 0

@@ -1,10 +1,28 @@
 extends Camera2D
 
 
-@export var tilemap : TileMap
+var tilemap : TileMap
 
 
 func _ready() -> void:
+	LevelManager.level_changed.connect(_on_level_changed)
+	if not tilemap:
+		find_tilemap()
+		setup_camera()
+
+
+func find_tilemap() -> void:
+	var current_level = LevelManager.current_level
+	tilemap = current_level.find_child("TileMap")
+	assert(tilemap)
+
+
+func _on_level_changed(_old_level: String, _new_level: String) -> void:
+	find_tilemap()
+	setup_camera()
+
+
+func setup_camera() -> void:
 	var map_rect : = tilemap.get_used_rect()
 	var tile_size : = tilemap.cell_quadrant_size
 	var world_size_in_px : = map_rect.size * tile_size

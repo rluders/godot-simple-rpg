@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvulbqo4hg3pr"]
+
+[ext_resource type="Script" path="res://scenes/components/level_portal.gd" id="1_l14uj"]
+
+[node name="ScenePortal" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_l14uj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
