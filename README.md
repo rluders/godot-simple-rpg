@@ -18,3 +18,7 @@ I hope to create something that resembles a final game while adding small challe
 ## The Goal
 
 My ultimate goal is to have fun while learning and practicing what I have learned.
+
+## License
+
+Except by the assets, all the code is under MIT.
