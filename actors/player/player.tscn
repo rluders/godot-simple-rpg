@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://c5qfn2bdu4av8"]
+[gd_scene load_steps=50 format=3 uid="uid://s18vdyev30hl"]
 
 [ext_resource type="Texture2D" uid="uid://dj5fk6vkdvrr2" path="res://assets/sprites/characters/player.png" id="1_4r71g"]
 [ext_resource type="Script" path="res://actors/player/player.gd" id="1_22mku"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b5o1a4ii1yd8d" path="res://actors/components/combat/hurtbox.tscn" id="4_3rkdp"]
 [ext_resource type="Resource" uid="uid://bjpn05gwgfsen" path="res://actors/player/hit.tres" id="5_g81a0"]
 [ext_resource type="PackedScene" uid="uid://bb2t8u6p2bqr" path="res://actors/components/combat/damage_indicator.tscn" id="8_m8bsy"]
+[ext_resource type="PackedScene" uid="uid://445a1q2usdpc" path="res://actors/components/combat/healthbar.tscn" id="9_qektd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x56j"]
 radius = 4.0
@@ -744,5 +745,13 @@ debug_color = Color(0.611765, 0.537255, 0, 0.419608)
 
 [node name="DamageIndicator" parent="." node_paths=PackedStringArray("hurtbox") instance=ExtResource("8_m8bsy")]
 hurtbox = NodePath("../Hurtbox")
+
+[node name="Healthbar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("9_qektd")]
+offset_left = -6.5
+offset_top = 4.5
+offset_right = 19.5
+offset_bottom = 8.5
+rounded = true
+health_component = NodePath("../Statuses/Health")
 
 [connection signal="health_depleted" from="Statuses/Health" to="." method="_on_health_health_depleted"]

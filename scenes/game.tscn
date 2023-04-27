@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bmpr237vrfxwh"]
 
-[ext_resource type="PackedScene" uid="uid://c5qfn2bdu4av8" path="res://actors/player/player.tscn" id="2_daqma"]
+[ext_resource type="PackedScene" uid="uid://s18vdyev30hl" path="res://actors/player/player.tscn" id="2_daqma"]
 [ext_resource type="PackedScene" uid="uid://dv80br81ts75r" path="res://scenes/level1.tscn" id="2_mjt6j"]
 [ext_resource type="PackedScene" uid="uid://c7xys4tvomgme" path="res://actors/player/following_camera.tscn" id="3_veamr"]
 [ext_resource type="PackedScene" uid="uid://c8aloe8fjvwr4" path="res://scenes/components/transition_effect.tscn" id="4_hgddd"]
@@ -9,7 +9,6 @@
 
 [node name="TransitionEffect" parent="." instance=ExtResource("4_hgddd")]
 process_mode = 3
-z_index = 99
 
 [node name="World" type="Node2D" parent="."]
 y_sort_enabled = true
