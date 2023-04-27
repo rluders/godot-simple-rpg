@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://445a1q2usdpc"]
+
+[ext_resource type="Script" path="res://actors/components/combat/healthbar.gd" id="1_l4r73"]
+
+[node name="Healthbar" type="ProgressBar"]
+modulate = Color(0.313726, 0.992157, 0.223529, 1)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -13.0
+offset_right = 13.0
+offset_bottom = 4.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+show_percentage = false
+script = ExtResource("1_l4r73")

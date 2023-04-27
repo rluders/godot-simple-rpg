@@ -9,7 +9,8 @@ extends Marker2D
 
 
 func _ready() -> void:
-	hurtbox.damage_received.connect(_on_hurtbox_damage_received)
+	if hurtbox:
+		hurtbox.damage_received.connect(_on_hurtbox_damage_received)
 
 
 func _get_configuration_warnings() -> PackedStringArray:

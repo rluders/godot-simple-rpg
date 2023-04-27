@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bbu0oy1yyrdsh"]
+[gd_scene load_steps=27 format=3 uid="uid://bbu0oy1yyrdsh"]
 
 [ext_resource type="Script" path="res://actors/slime/slime.gd" id="1_af3cn"]
 [ext_resource type="Texture2D" uid="uid://bwuhwa5tp1o0j" path="res://assets/sprites/characters/slime.png" id="2_tphau"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b5o1a4ii1yd8d" path="res://actors/components/combat/hurtbox.tscn" id="5_qs4bc"]
 [ext_resource type="PackedScene" uid="uid://12eagfws4yva" path="res://actors/components/status/health.tscn" id="7_qf2c8"]
 [ext_resource type="PackedScene" uid="uid://bb2t8u6p2bqr" path="res://actors/components/combat/damage_indicator.tscn" id="8_sa8ny"]
+[ext_resource type="PackedScene" uid="uid://445a1q2usdpc" path="res://actors/components/combat/healthbar.tscn" id="9_misvh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h2ma1"]
 radius = 4.0
@@ -186,6 +187,13 @@ max_health = 20.0
 [node name="DamageIndicatorText" parent="." node_paths=PackedStringArray("hurtbox") instance=ExtResource("8_sa8ny")]
 position = Vector2(0, 3)
 hurtbox = NodePath("../Hurtbox")
+
+[node name="Healthbar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("9_misvh")]
+offset_left = -6.5
+offset_top = 9.0
+offset_right = 19.5
+offset_bottom = 13.0
+health_component = NodePath("../Statuses/Health")
 
 [connection signal="target_found" from="DetectionArea" to="." method="_on_detection_area_target_found"]
 [connection signal="target_lost" from="DetectionArea" to="." method="_on_detection_area_target_lost"]
