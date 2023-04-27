@@ -1,14 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://cw00fv647rolf"]
+[gd_scene load_steps=11 format=3 uid="uid://dv80br81ts75r"]
 
-[ext_resource type="Texture2D" uid="uid://deoqyeme8qfdj" path="res://assets/sprites/tilesets/plains.png" id="1_hvjs3"]
-[ext_resource type="Texture2D" uid="uid://bm8emt8aiyq3u" path="res://assets/sprites/tilesets/grass.png" id="2_1ujdu"]
-[ext_resource type="Texture2D" uid="uid://bxenar7xjx43v" path="res://assets/sprites/objects/objects.png" id="3_34ay1"]
-[ext_resource type="PackedScene" uid="uid://c5qfn2bdu4av8" path="res://actors/player/player.tscn" id="4_0t8i7"]
-[ext_resource type="PackedScene" uid="uid://c7xys4tvomgme" path="res://actors/player/following_camera.tscn" id="5_fq4ib"]
-[ext_resource type="PackedScene" uid="uid://bbu0oy1yyrdsh" path="res://actors/slime/slime.tscn" id="5_v34lx"]
+[ext_resource type="Texture2D" uid="uid://deoqyeme8qfdj" path="res://assets/sprites/tilesets/plains.png" id="1_16c35"]
+[ext_resource type="Texture2D" uid="uid://bm8emt8aiyq3u" path="res://assets/sprites/tilesets/grass.png" id="2_jpm70"]
+[ext_resource type="Texture2D" uid="uid://bxenar7xjx43v" path="res://assets/sprites/objects/objects.png" id="3_8qtif"]
+[ext_resource type="PackedScene" uid="uid://bbu0oy1yyrdsh" path="res://actors/slime/slime.tscn" id="6_j1ocw"]
+[ext_resource type="PackedScene" uid="uid://dvulbqo4hg3pr" path="res://scenes/components/level_portal.tscn" id="7_dkr3e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2818u"]
-texture = ExtResource("1_hvjs3")
+texture = ExtResource("1_16c35")
 2:1/0 = 0
 2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:1/0/physics_layer_0/angular_velocity = 0.0
@@ -103,13 +102,13 @@ texture = ExtResource("1_hvjs3")
 5:6/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3ff7"]
-texture = ExtResource("2_1ujdu")
+texture = ExtResource("2_jpm70")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wkilw"]
-texture = ExtResource("3_34ay1")
+texture = ExtResource("3_8qtif")
 0:0/0 = 0
 0:0/0/y_sort_origin = -6
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -155,7 +154,10 @@ sources/0 = SubResource("TileSetAtlasSource_2818u")
 sources/1 = SubResource("TileSetAtlasSource_x3ff7")
 sources/2 = SubResource("TileSetAtlasSource_wkilw")
 
-[node name="World" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xiugp"]
+size = Vector2(88, 27)
+
+[node name="Level1" type="Node2D"]
 y_sort_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -188,22 +190,26 @@ layer_3/z_index = 10
 layer_3/tile_data = PackedInt32Array()
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." instance=ExtResource("4_0t8i7")]
-position = Vector2(404, 390)
-
-[node name="FollowingCamera" parent="Player" node_paths=PackedStringArray("tilemap") instance=ExtResource("5_fq4ib")]
-zoom = Vector2(4, 4)
-limit_left = 0
-limit_top = 0
-tilemap = NodePath("../../TileMap")
-
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Slime" parent="Enemies" instance=ExtResource("5_v34lx")]
+[node name="Slime" parent="Enemies" instance=ExtResource("6_j1ocw")]
 position = Vector2(489, 500)
 
-[node name="Slime2" parent="Enemies" instance=ExtResource("5_v34lx")]
+[node name="Slime2" parent="Enemies" instance=ExtResource("6_j1ocw")]
 position = Vector2(168, 373)
 
-[node name="Slime3" parent="Enemies" instance=ExtResource("5_v34lx")]
+[node name="Slime3" parent="Enemies" instance=ExtResource("6_j1ocw")]
 position = Vector2(606, 144)
+
+[node name="Portals" type="Node2D" parent="."]
+
+[node name="ScenePortal" parent="Portals" node_paths=PackedStringArray("spawn_point") instance=ExtResource("7_dkr3e")]
+position = Vector2(351, 671)
+destination = "res://scenes/level2.tscn"
+spawn_point = NodePath("SpawnPoint")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/ScenePortal"]
+shape = SubResource("RectangleShape2D_xiugp")
+
+[node name="SpawnPoint" type="Marker2D" parent="Portals/ScenePortal"]
+position = Vector2(0, -24)

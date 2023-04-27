@@ -12,9 +12,13 @@ config_version=5
 
 config/name="Simple RPG"
 config/description="This is DevWorm's tutorial \"How to Create an RPG in Godot 4\" with steroids."
-run/main_scene="res://scenes/world.tscn"
+run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+LevelManager="*res://scenes/components/level_manager.tscn"
 
 [dotnet]
 
