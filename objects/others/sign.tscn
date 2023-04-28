@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://fial3xweeepx"]
+
+[ext_resource type="Texture2D" uid="uid://bxenar7xjx43v" path="res://assets/sprites/objects/objects.png" id="1_rabyf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uak2n"]
+radius = 2.0
+height = 6.0
+
+[node name="Sign" type="Node2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_rabyf")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_uak2n")
