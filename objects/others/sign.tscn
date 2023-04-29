@@ -7,6 +7,7 @@ radius = 2.0
 height = 6.0
 
 [node name="Sign" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_rabyf")

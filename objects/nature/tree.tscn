@@ -5,6 +5,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_i6yo7"]
 
 [node name="Tree" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_bisx6")

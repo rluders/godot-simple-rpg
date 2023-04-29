@@ -6,6 +6,7 @@
 size = Vector2(14, 5)
 
 [node name="Box" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_fupnk")
