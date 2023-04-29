@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bxenar7xjx43v" path="res://assets/sprites/objects/objects.png" id="1_bisx6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i6yo7"]
+radius = 8.0
 
 [node name="Tree" type="Node2D"]
 y_sort_enabled = true
@@ -15,5 +16,5 @@ region_rect = Rect2(128, 96, 32, 48)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 12)
+position = Vector2(0, 14)
 shape = SubResource("CircleShape2D_i6yo7")

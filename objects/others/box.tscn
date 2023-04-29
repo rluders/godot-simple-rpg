@@ -2,19 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://bxenar7xjx43v" path="res://assets/sprites/objects/objects.png" id="1_fupnk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1psd"]
-size = Vector2(14, 5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ouba6"]
+radius = 6.0
 
-[node name="Box" type="Node2D"]
-y_sort_enabled = true
+[node name="Box" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite2D" parent="."]
+y_sort_enabled = true
 texture = ExtResource("1_fupnk")
 region_enabled = true
 region_rect = Rect2(80, 0, 16, 16)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 4.5)
-shape = SubResource("RectangleShape2D_i1psd")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_ouba6")

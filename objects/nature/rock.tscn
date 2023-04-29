@@ -6,17 +6,14 @@
 radius = 3.0
 height = 14.0
 
-[node name="Rock" type="Node2D"]
-y_sort_enabled = true
+[node name="Rock" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_sxrdc")
 region_enabled = true
 region_rect = Rect2(0, 16, 16, 16)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7.10543e-15, 4)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ky8dt")

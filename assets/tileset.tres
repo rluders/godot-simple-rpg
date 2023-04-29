@@ -1,9 +1,17 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://n1q1yw4t2q60"]
+[gd_resource type="TileSet" load_steps=19 format=3 uid="uid://n1q1yw4t2q60"]
 
 [ext_resource type="Texture2D" uid="uid://bm8emt8aiyq3u" path="res://assets/sprites/tilesets/grass.png" id="1_oxo60"]
+[ext_resource type="PackedScene" uid="uid://j3igiyyubew2" path="res://objects/nature/big_tree.tscn" id="2_e7po3"]
 [ext_resource type="Texture2D" uid="uid://deoqyeme8qfdj" path="res://assets/sprites/tilesets/plains.png" id="2_tv4pa"]
+[ext_resource type="PackedScene" uid="uid://bn1ixpcwhnggq" path="res://objects/nature/bush.tscn" id="3_1hyv7"]
 [ext_resource type="Texture2D" uid="uid://3tnyrrxd3eet" path="res://assets/sprites/tilesets/fences.png" id="3_my3wu"]
+[ext_resource type="PackedScene" uid="uid://bfdhta480x5u" path="res://objects/nature/rock.tscn" id="4_e5sbj"]
 [ext_resource type="Texture2D" uid="uid://bxenar7xjx43v" path="res://assets/sprites/objects/objects.png" id="4_y6ftj"]
+[ext_resource type="PackedScene" uid="uid://d4kvw7vot2vt7" path="res://objects/nature/tree.tscn" id="5_6ats2"]
+[ext_resource type="PackedScene" uid="uid://dxq2wx7ttsyh3" path="res://objects/nature/trunk.tscn" id="6_heeq0"]
+[ext_resource type="PackedScene" uid="uid://bwm1nuwkrv2u3" path="res://objects/others/box.tscn" id="8_xoaul"]
+[ext_resource type="PackedScene" uid="uid://d1gou8vmotl2p" path="res://objects/others/chest.tscn" id="9_omw02"]
+[ext_resource type="PackedScene" uid="uid://fial3xweeepx" path="res://objects/others/sign.tscn" id="10_68qy2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u77v8"]
 texture = ExtResource("1_oxo60")
@@ -20,6 +28,14 @@ texture = ExtResource("1_oxo60")
 0:0/0/terrains_peering_bit/top_left_corner = 0
 0:0/0/terrains_peering_bit/top_side = 0
 0:0/0/terrains_peering_bit/top_right_corner = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_fdbga"]
+resource_name = "Nature"
+scenes/1/scene = ExtResource("2_e7po3")
+scenes/2/scene = ExtResource("3_1hyv7")
+scenes/3/scene = ExtResource("4_e5sbj")
+scenes/4/scene = ExtResource("5_6ats2")
+scenes/5/scene = ExtResource("6_heeq0")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1qhgb"]
 texture = ExtResource("2_tv4pa")
@@ -595,6 +611,12 @@ texture = ExtResource("2_tv4pa")
 5:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:11/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0ogbq"]
+resource_name = "Others"
+scenes/1/scene = ExtResource("8_xoaul")
+scenes/2/scene = ExtResource("9_omw02")
+scenes/3/scene = ExtResource("10_68qy2")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ag7q3"]
 texture = ExtResource("3_my3wu")
 0:0/0 = 0
@@ -844,3 +866,5 @@ sources/0 = SubResource("TileSetAtlasSource_u77v8")
 sources/2 = SubResource("TileSetAtlasSource_1qhgb")
 sources/6 = SubResource("TileSetAtlasSource_ag7q3")
 sources/7 = SubResource("TileSetAtlasSource_0q5lh")
+sources/1 = SubResource("TileSetScenesCollectionSource_fdbga")
+sources/3 = SubResource("TileSetScenesCollectionSource_0ogbq")

@@ -5,17 +5,14 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_thqqx"]
 radius = 7.0
 
-[node name="Bush" type="Node2D"]
-y_sort_enabled = true
+[node name="Bush" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_oortg")
 region_enabled = true
 region_rect = Rect2(96, 112, 32, 32)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.42109e-14, 8)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_thqqx")

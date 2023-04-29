@@ -3,19 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://bxenar7xjx43v" path="res://assets/sprites/objects/objects.png" id="1_0qepu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l3h4j"]
-radius = 13.0384
+radius = 11.0
 
-[node name="BigTree" type="Node2D"]
-y_sort_enabled = true
+[node name="BigTree" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_0qepu")
 region_enabled = true
 region_rect = Rect2(0, 80, 48, 64)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 16)
 shape = SubResource("CircleShape2D_l3h4j")

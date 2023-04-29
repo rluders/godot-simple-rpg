@@ -2,18 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://bkcyi2cp2xs4w" path="res://assets/sprites/objects/chest_01.png" id="1_4eiib"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fku4g"]
-size = Vector2(14, 6)
+[sub_resource type="CircleShape2D" id="CircleShape2D_48cjl"]
+radius = 6.0
 
-[node name="Chest" type="Node2D"]
+[node name="Chest" type="StaticBody2D"]
 y_sort_enabled = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_4eiib")
 hframes = 4
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_fku4g")
+shape = SubResource("CircleShape2D_48cjl")

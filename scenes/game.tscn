@@ -13,15 +13,16 @@ process_mode = 3
 [node name="World" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="LevelRoot" type="Node2D" parent="World"]
-y_sort_enabled = true
-
-[node name="Level1" parent="World/LevelRoot" instance=ExtResource("2_mjt6j")]
-
 [node name="Player" parent="World" instance=ExtResource("2_daqma")]
-position = Vector2(156, 88)
+z_index = 0
+position = Vector2(147, 126)
 
 [node name="FollowingCamera" parent="World/Player" instance=ExtResource("3_veamr")]
 zoom = Vector2(4, 4)
 limit_left = -20
 limit_top = -20
+
+[node name="LevelRoot" type="Node2D" parent="World"]
+y_sort_enabled = true
+
+[node name="Level1" parent="World/LevelRoot" instance=ExtResource("2_mjt6j")]
