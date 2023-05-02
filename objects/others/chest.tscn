@@ -9,9 +9,9 @@ radius = 6.0
 y_sort_enabled = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
 texture = ExtResource("1_4eiib")
 hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_48cjl")

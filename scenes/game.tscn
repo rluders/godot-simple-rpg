@@ -14,7 +14,6 @@ process_mode = 3
 y_sort_enabled = true
 
 [node name="Player" parent="World" instance=ExtResource("2_daqma")]
-z_index = 0
 position = Vector2(147, 126)
 
 [node name="FollowingCamera" parent="World/Player" instance=ExtResource("3_veamr")]

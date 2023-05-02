@@ -9,12 +9,12 @@ size = Vector2(11.9999, 24)
 y_sort_enabled = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
 texture = ExtResource("1_pp537")
 region_enabled = true
 region_rect = Rect2(160, 112, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
-position = Vector2(-4.98693e-07, 5)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ku5jx")

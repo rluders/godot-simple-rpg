@@ -8,10 +8,10 @@ radius = 11.0
 [node name="BigTree" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
 texture = ExtResource("1_0qepu")
 region_enabled = true
 region_rect = Rect2(0, 80, 48, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
 shape = SubResource("CircleShape2D_l3h4j")

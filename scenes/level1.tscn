@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dv80br81ts75r"]
+[gd_scene load_steps=14 format=3 uid="uid://dv80br81ts75r"]
 
 [ext_resource type="PackedScene" uid="uid://j3igiyyubew2" path="res://objects/nature/big_tree.tscn" id="4_4unio"]
 [ext_resource type="PackedScene" uid="uid://bn1ixpcwhnggq" path="res://objects/nature/bush.tscn" id="5_6q4ip"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://fial3xweeepx" path="res://objects/others/sign.tscn" id="9_qkr35"]
 [ext_resource type="PackedScene" uid="uid://bwm1nuwkrv2u3" path="res://objects/others/box.tscn" id="10_2c6ca"]
 [ext_resource type="PackedScene" uid="uid://d1gou8vmotl2p" path="res://objects/others/chest.tscn" id="11_cmu0b"]
+[ext_resource type="FontFile" uid="uid://p4f8eglfukbh" path="res://assets/fonts/ThaleahFat.ttf" id="12_6op3y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xiugp"]
 size = Vector2(112, 45.5)
@@ -42,7 +43,6 @@ layer_2/tile_data = PackedInt32Array(1835080, 6, 2, 1769544, 6, 1, 1704008, 6, 1
 metadata/_edit_lock_ = true
 
 [node name="Nature" type="Node2D" parent="."]
-z_as_relative = false
 y_sort_enabled = true
 position = Vector2(18, 19)
 
@@ -110,42 +110,38 @@ position = Vector2(1052, 455)
 position = Vector2(294, 145)
 
 [node name="Objects" type="Node2D" parent="."]
+y_sort_enabled = true
 position = Vector2(18, 19)
 
 [node name="Sign" parent="Objects" instance=ExtResource("9_qkr35")]
-z_index = 1
+y_sort_enabled = false
 position = Vector2(534, 437)
 
 [node name="Sign2" parent="Objects" instance=ExtResource("9_qkr35")]
-z_index = 1
+y_sort_enabled = false
 position = Vector2(101, 137)
 
 [node name="Box" parent="Objects" instance=ExtResource("10_2c6ca")]
-z_index = 1
 position = Vector2(390, 355)
 
 [node name="Box4" parent="Objects" instance=ExtResource("10_2c6ca")]
-z_index = 1
 position = Vector2(53, 290)
 
 [node name="Box5" parent="Objects" instance=ExtResource("10_2c6ca")]
-z_index = 1
 position = Vector2(40, 136)
 
 [node name="Box2" parent="Objects" instance=ExtResource("10_2c6ca")]
-z_index = 1
 position = Vector2(661, 571)
 
 [node name="Box3" parent="Objects" instance=ExtResource("10_2c6ca")]
-z_index = 1
 position = Vector2(818, 213)
 
 [node name="Chest" parent="Objects" instance=ExtResource("11_cmu0b")]
-z_index = 1
+y_sort_enabled = false
 position = Vector2(550, 14)
 
 [node name="Chest2" parent="Objects" instance=ExtResource("11_cmu0b")]
-z_index = 1
+y_sort_enabled = false
 position = Vector2(71, 136)
 
 [node name="Enemies" type="Node2D" parent="."]
@@ -171,7 +167,6 @@ position = Vector2(1054, 305)
 position = Vector2(856, 129)
 
 [node name="Trees" type="Node2D" parent="."]
-z_index = 2
 y_sort_enabled = true
 
 [node name="Tree" parent="Trees" instance=ExtResource("7_87osq")]
@@ -362,3 +357,19 @@ shape = SubResource("RectangleShape2D_xiugp")
 
 [node name="SpawnPoint" type="Marker2D" parent="Portals/NorthScenePortal"]
 position = Vector2(0, 39)
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 118.0
+offset_right = 203.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("12_6op3y")
+text = "Using normal scenes"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 46.0
+offset_top = 48.0
+offset_right = 201.0
+offset_bottom = 66.0
+theme_override_fonts/font = ExtResource("12_6op3y")
+text = "Using tilemap scenes"

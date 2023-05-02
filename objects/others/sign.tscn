@@ -9,10 +9,10 @@ radius = 5.0
 y_sort_enabled = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
 texture = ExtResource("1_rabyf")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_3phin")
