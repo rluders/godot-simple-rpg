@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dv80br81ts75r"]
+[gd_scene load_steps=13 format=3 uid="uid://dv80br81ts75r"]
 
 [ext_resource type="PackedScene" uid="uid://j3igiyyubew2" path="res://objects/nature/big_tree.tscn" id="4_4unio"]
 [ext_resource type="PackedScene" uid="uid://bn1ixpcwhnggq" path="res://objects/nature/bush.tscn" id="5_6q4ip"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://fial3xweeepx" path="res://objects/others/sign.tscn" id="9_qkr35"]
 [ext_resource type="PackedScene" uid="uid://bwm1nuwkrv2u3" path="res://objects/others/box.tscn" id="10_2c6ca"]
 [ext_resource type="PackedScene" uid="uid://d1gou8vmotl2p" path="res://objects/others/chest.tscn" id="11_cmu0b"]
-[ext_resource type="FontFile" uid="uid://p4f8eglfukbh" path="res://assets/fonts/ThaleahFat.ttf" id="12_6op3y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xiugp"]
 size = Vector2(112, 45.5)
@@ -39,7 +38,7 @@ layer_2/modulate = Color(1, 1, 1, 1)
 layer_2/y_sort_enabled = true
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
-layer_2/tile_data = PackedInt32Array(1835080, 6, 2, 1769544, 6, 1, 1704008, 6, 1, 1638472, 6, 1, 1572936, 6, 1, 1507400, 6, 1, 1441864, 6, 1, 1376328, 6, 1, 1310792, 6, 1, 1245256, 6, 1, 1179720, 6, 1, 1114184, 6, 0, 2687026, 196614, 3, 2687025, 131078, 3, 2687024, 131078, 3, 2687023, 131078, 3, 2687022, 131078, 3, 2687021, 131078, 3, 2687020, 131078, 3, 2687019, 131078, 3, 2687018, 131078, 3, 2687017, 131078, 3, 2687016, 131078, 3, 2687015, 131078, 3, 2687014, 131078, 3, 2687013, 65542, 3, 2687006, 196614, 3, 2687005, 131078, 3, 2687004, 131078, 3, 2687003, 131078, 3, 2687002, 131078, 3, 2687001, 131078, 3, 2687000, 131078, 3, 2686999, 131078, 3, 2686998, 131078, 3, 2686997, 131078, 3, 2686996, 131078, 3, 2686995, 131078, 3, 2686994, 131078, 3, 2686993, 131078, 3, 2686992, 65542, 3, -65475, 196614, 3, -65476, 131078, 3, -65477, 131078, 3, -65478, 131078, 3, -65479, 131078, 3, -65480, 131078, 3, -65481, 131078, 3, -65482, 131078, 3, -65483, 131078, 3, -65484, 131078, 3, -65485, 131078, 3, -65486, 131078, 3, -65487, 131078, 3, -65488, 131078, 3, -65489, 131078, 3, -65490, 131078, 3, -65491, 131078, 3, -65492, 131078, 3, -65493, 131078, 3, -65494, 131078, 3, -65495, 131078, 3, -65496, 131078, 3, -65497, 131078, 3, -65498, 131078, 3, -65499, 131078, 3, -65500, 131078, 3, -65501, 65542, 3, 1310719, 6, 1, 1245183, 6, 1, 1179647, 6, 1, 1114111, 6, 1, 1048575, 6, 1, 983039, 6, 1, 917503, 6, 1, 851967, 6, 1, 786431, 6, 1, 720895, 6, 0, 1376255, 6, 2, -65470, 65542, 3, -65469, 196614, 3, 327683, 3, 65536, 327685, 3, 131072, 327687, 3, 196608, 327689, 1, 196608, 327691, 1, 131072, 327699, 1, 327680, 262160, 1, 65536, 262157, 1, 262144)
+layer_2/tile_data = PackedInt32Array(1835080, 6, 2, 1769544, 6, 1, 1704008, 6, 1, 1638472, 6, 1, 1572936, 6, 1, 1507400, 6, 1, 1441864, 6, 1, 1376328, 6, 1, 1310792, 6, 1, 1245256, 6, 1, 1179720, 6, 1, 1114184, 6, 0, 2687026, 196614, 3, 2687025, 131078, 3, 2687024, 131078, 3, 2687023, 131078, 3, 2687022, 131078, 3, 2687021, 131078, 3, 2687020, 131078, 3, 2687019, 131078, 3, 2687018, 131078, 3, 2687017, 131078, 3, 2687016, 131078, 3, 2687015, 131078, 3, 2687014, 131078, 3, 2687013, 65542, 3, 2687006, 196614, 3, 2687005, 131078, 3, 2687004, 131078, 3, 2687003, 131078, 3, 2687002, 131078, 3, 2687001, 131078, 3, 2687000, 131078, 3, 2686999, 131078, 3, 2686998, 131078, 3, 2686997, 131078, 3, 2686996, 131078, 3, 2686995, 131078, 3, 2686994, 131078, 3, 2686993, 131078, 3, 2686992, 65542, 3, -65475, 196614, 3, -65476, 131078, 3, -65477, 131078, 3, -65478, 131078, 3, -65479, 131078, 3, -65480, 131078, 3, -65481, 131078, 3, -65482, 131078, 3, -65483, 131078, 3, -65484, 131078, 3, -65485, 131078, 3, -65486, 131078, 3, -65487, 131078, 3, -65488, 131078, 3, -65489, 131078, 3, -65490, 131078, 3, -65491, 131078, 3, -65492, 131078, 3, -65493, 131078, 3, -65494, 131078, 3, -65495, 131078, 3, -65496, 131078, 3, -65497, 131078, 3, -65498, 131078, 3, -65499, 131078, 3, -65500, 131078, 3, -65501, 65542, 3, 1310719, 6, 1, 1245183, 6, 1, 1179647, 6, 1, 1114111, 6, 1, 1048575, 6, 1, 983039, 6, 1, 917503, 6, 1, 851967, 6, 1, 786431, 6, 1, 720895, 6, 0, 1376255, 6, 2, -65470, 65542, 3, -65469, 196614, 3)
 metadata/_edit_lock_ = true
 
 [node name="Nature" type="Node2D" parent="."]
@@ -49,9 +48,6 @@ position = Vector2(18, 19)
 [node name="Rock" parent="Nature" instance=ExtResource("6_pa6us")]
 position = Vector2(279, 243)
 
-[node name="Rock12" parent="Nature" instance=ExtResource("6_pa6us")]
-position = Vector2(129, 139)
-
 [node name="Rock2" parent="Nature" instance=ExtResource("6_pa6us")]
 position = Vector2(243, 415)
 
@@ -59,7 +55,7 @@ position = Vector2(243, 415)
 position = Vector2(342, 608)
 
 [node name="Rock4" parent="Nature" instance=ExtResource("6_pa6us")]
-position = Vector2(755, 357)
+position = Vector2(742, 345)
 
 [node name="Rock5" parent="Nature" instance=ExtResource("6_pa6us")]
 position = Vector2(545, 421)
@@ -107,7 +103,7 @@ position = Vector2(966, 466)
 position = Vector2(1052, 455)
 
 [node name="Trunk9" parent="Nature" instance=ExtResource("8_sxpki")]
-position = Vector2(294, 145)
+position = Vector2(254, 130)
 
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -117,18 +113,11 @@ position = Vector2(18, 19)
 y_sort_enabled = false
 position = Vector2(534, 437)
 
-[node name="Sign2" parent="Objects" instance=ExtResource("9_qkr35")]
-y_sort_enabled = false
-position = Vector2(101, 137)
-
 [node name="Box" parent="Objects" instance=ExtResource("10_2c6ca")]
 position = Vector2(390, 355)
 
 [node name="Box4" parent="Objects" instance=ExtResource("10_2c6ca")]
 position = Vector2(53, 290)
-
-[node name="Box5" parent="Objects" instance=ExtResource("10_2c6ca")]
-position = Vector2(40, 136)
 
 [node name="Box2" parent="Objects" instance=ExtResource("10_2c6ca")]
 position = Vector2(661, 571)
@@ -139,10 +128,6 @@ position = Vector2(818, 213)
 [node name="Chest" parent="Objects" instance=ExtResource("11_cmu0b")]
 y_sort_enabled = false
 position = Vector2(550, 14)
-
-[node name="Chest2" parent="Objects" instance=ExtResource("11_cmu0b")]
-y_sort_enabled = false
-position = Vector2(71, 136)
 
 [node name="Enemies" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -155,7 +140,7 @@ position = Vector2(410, 546)
 position = Vector2(125, 416)
 
 [node name="Slime3" parent="Enemies" instance=ExtResource("6_j1ocw")]
-position = Vector2(606, 166)
+position = Vector2(591, 152)
 
 [node name="Slime4" parent="Enemies" instance=ExtResource("6_j1ocw")]
 position = Vector2(874, 491)
@@ -165,6 +150,9 @@ position = Vector2(1054, 305)
 
 [node name="Slime6" parent="Enemies" instance=ExtResource("6_j1ocw")]
 position = Vector2(856, 129)
+
+[node name="Slime7" parent="Enemies" instance=ExtResource("6_j1ocw")]
+position = Vector2(434, 47)
 
 [node name="Trees" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -192,10 +180,6 @@ position = Vector2(1101, 445)
 [node name="Tree6" parent="Trees" instance=ExtResource("7_87osq")]
 y_sort_enabled = false
 position = Vector2(386, 182)
-
-[node name="Tree7" parent="Trees" instance=ExtResource("7_87osq")]
-y_sort_enabled = false
-position = Vector2(222, 152)
 
 [node name="BigTree" parent="Trees" instance=ExtResource("4_4unio")]
 position = Vector2(345, 456)
@@ -257,9 +241,6 @@ position = Vector2(242, 397)
 [node name="BigTree3" parent="Trees" instance=ExtResource("4_4unio")]
 position = Vector2(330, 281)
 
-[node name="BigTree22" parent="Trees" instance=ExtResource("4_4unio")]
-position = Vector2(267, 144)
-
 [node name="BigTree4" parent="Trees" instance=ExtResource("4_4unio")]
 position = Vector2(384, 352)
 
@@ -320,9 +301,6 @@ position = Vector2(369, 44)
 [node name="Bush11" parent="Trees" instance=ExtResource("5_6q4ip")]
 position = Vector2(357, 194)
 
-[node name="Bush23" parent="Trees" instance=ExtResource("5_6q4ip")]
-position = Vector2(182, 159)
-
 [node name="Bush12" parent="Trees" instance=ExtResource("5_6q4ip")]
 position = Vector2(370, 223)
 
@@ -357,19 +335,3 @@ shape = SubResource("RectangleShape2D_xiugp")
 
 [node name="SpawnPoint" type="Marker2D" parent="Portals/NorthScenePortal"]
 position = Vector2(0, 39)
-
-[node name="Label2" type="Label" parent="."]
-offset_left = 48.0
-offset_top = 118.0
-offset_right = 203.0
-offset_bottom = 136.0
-theme_override_fonts/font = ExtResource("12_6op3y")
-text = "Using normal scenes"
-
-[node name="Label" type="Label" parent="."]
-offset_left = 46.0
-offset_top = 48.0
-offset_right = 201.0
-offset_bottom = 66.0
-theme_override_fonts/font = ExtResource("12_6op3y")
-text = "Using tilemap scenes"
