@@ -63,6 +63,33 @@ position = Vector2(545, 421)
 [node name="Rock6" parent="Nature" instance=ExtResource("6_pa6us")]
 position = Vector2(1065, 79)
 
+[node name="Rock12" parent="Nature" instance=ExtResource("6_pa6us")]
+position = Vector2(981, -17)
+
+[node name="Rock19" parent="Nature" instance=ExtResource("6_pa6us")]
+position = Vector2(967, -9)
+
+[node name="Rock20" parent="Nature" instance=ExtResource("6_pa6us")]
+position = Vector2(967, -9)
+
+[node name="Rock13" parent="Nature" instance=ExtResource("6_pa6us")]
+position = Vector2(995, -23)
+
+[node name="Rock14" parent="Nature" instance=ExtResource("6_pa6us")]
+position = Vector2(1003, -15)
+
+[node name="Rock15" parent="Nature" instance=ExtResource("6_pa6us")]
+position = Vector2(1014, -24)
+
+[node name="Rock16" parent="Nature" instance=ExtResource("6_pa6us")]
+position = Vector2(1022, -14)
+
+[node name="Rock17" parent="Nature" instance=ExtResource("6_pa6us")]
+position = Vector2(1032, -25)
+
+[node name="Rock18" parent="Nature" instance=ExtResource("6_pa6us")]
+position = Vector2(1042, -13)
+
 [node name="Rock8" parent="Nature" instance=ExtResource("6_pa6us")]
 position = Vector2(652, 239)
 
@@ -324,14 +351,3 @@ shape = SubResource("RectangleShape2D_xiugp")
 
 [node name="SpawnPoint" type="Marker2D" parent="Portals/SouthScenePortal"]
 position = Vector2(1, -42)
-
-[node name="NorthScenePortal" parent="Portals" node_paths=PackedStringArray("spawn_point") instance=ExtResource("7_dkr3e")]
-position = Vector2(1004, -60)
-destination = "res://scenes/level2.tscn"
-spawn_point = NodePath("SpawnPoint")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/NorthScenePortal"]
-shape = SubResource("RectangleShape2D_xiugp")
-
-[node name="SpawnPoint" type="Marker2D" parent="Portals/NorthScenePortal"]
-position = Vector2(0, 39)
