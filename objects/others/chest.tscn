@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1gou8vmotl2p"]
+
+[ext_resource type="Texture2D" uid="uid://bkcyi2cp2xs4w" path="res://assets/sprites/objects/chest_01.png" id="1_4eiib"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_48cjl"]
+radius = 6.0
+
+[node name="Chest" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("1_4eiib")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_48cjl")

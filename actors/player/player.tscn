@@ -684,7 +684,6 @@ radius = 5.0
 height = 16.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "anim_tree")]
-z_index = 1
 y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_22mku")
@@ -692,8 +691,9 @@ anim_player = NodePath("AnimationPlayer")
 anim_tree = NodePath("AnimationTree")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2.08165e-12, -15)
+position = Vector2(0.262781, 1.18726)
 texture = ExtResource("1_4r71g")
+offset = Vector2(2.08165e-12, -15)
 flip_h = true
 hframes = 6
 vframes = 10

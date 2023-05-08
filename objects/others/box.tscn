@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwm1nuwkrv2u3"]
+
+[ext_resource type="Texture2D" uid="uid://bxenar7xjx43v" path="res://assets/sprites/objects/objects.png" id="1_fupnk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ouba6"]
+radius = 6.0
+
+[node name="Box" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(2.08165e-12, 4)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -6)
+texture = ExtResource("1_fupnk")
+region_enabled = true
+region_rect = Rect2(80, 0, 16, 16)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_ouba6")

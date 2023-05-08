@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://fial3xweeepx"]
+
+[ext_resource type="Texture2D" uid="uid://bxenar7xjx43v" path="res://assets/sprites/objects/objects.png" id="1_rabyf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3phin"]
+radius = 5.0
+
+[node name="Sign" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("1_rabyf")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3phin")
