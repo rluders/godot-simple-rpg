@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://s18vdyev30hl"]
+[gd_scene load_steps=53 format=3 uid="uid://cadl6hjl3d2cy"]
 
 [ext_resource type="Texture2D" uid="uid://dj5fk6vkdvrr2" path="res://assets/sprites/characters/player.png" id="1_4r71g"]
 [ext_resource type="Script" path="res://actors/player/player.gd" id="1_22mku"]
@@ -6,9 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://k6axntht1gyu" path="res://actors/components/combat/hitbox.tscn" id="3_fxppv"]
 [ext_resource type="PackedScene" uid="uid://12eagfws4yva" path="res://actors/components/status/health.tscn" id="3_u7rq0"]
 [ext_resource type="PackedScene" uid="uid://b5o1a4ii1yd8d" path="res://actors/components/combat/hurtbox.tscn" id="4_3rkdp"]
-[ext_resource type="Resource" uid="uid://bjpn05gwgfsen" path="res://actors/player/hit.tres" id="5_g81a0"]
+[ext_resource type="Resource" uid="uid://bjpn05gwgfsen" path="res://actors/player/damage/sword.tres" id="7_a3frl"]
 [ext_resource type="PackedScene" uid="uid://bb2t8u6p2bqr" path="res://actors/components/combat/damage_indicator.tscn" id="8_m8bsy"]
 [ext_resource type="PackedScene" uid="uid://445a1q2usdpc" path="res://actors/components/combat/healthbar.tscn" id="9_qektd"]
+[ext_resource type="PackedScene" uid="uid://g8ya0cgonyud" path="res://actors/components/state_machine/state_machine.tscn" id="10_31ore"]
+[ext_resource type="Script" path="res://actors/player/states/idle.gd" id="11_prtcq"]
+[ext_resource type="Script" path="res://actors/player/states/walk.gd" id="12_bg1lu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x56j"]
 radius = 4.0
@@ -734,7 +737,7 @@ position = Vector2(0.5, -5)
 [node name="Hitbox" parent="HitboxPivot" instance=ExtResource("3_fxppv")]
 position = Vector2(-18.5, 0)
 rotation = -1.5708
-hit = ExtResource("5_g81a0")
+hit = ExtResource("7_a3frl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxPivot/Hitbox"]
 position = Vector2(-2.13163e-14, 6)
@@ -753,5 +756,14 @@ offset_right = 19.5
 offset_bottom = 8.5
 rounded = true
 health_component = NodePath("../Statuses/Health")
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("10_31ore")]
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("11_prtcq")
+
+[node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource("12_bg1lu")
 
 [connection signal="health_depleted" from="Statuses/Health" to="." method="_on_health_health_depleted"]

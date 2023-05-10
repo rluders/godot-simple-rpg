@@ -4,6 +4,7 @@ extends Actor
 
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var hitbox_pivot : Marker2D = $HitboxPivot
+@onready var state_machine : StateMachine = $StateMachine
 
 var is_attacking = false
 
@@ -17,23 +18,6 @@ func _physics_process(delta: float) -> void:
 		return
 	if is_attacking:
 		return
-	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := get_direction()
-	
-	if direction != Vector2.ZERO:
-		anim_state.travel("Walk")
-		# AnimationTree for movement
-		anim_tree.set("parameters/Idle/blend_position", velocity)
-		anim_tree.set("parameters/Walk/blend_position", velocity)
-		anim_tree.set("parameters/Attack/blend_position", velocity)
-		velocity = velocity.move_toward(direction * max_speed, acceleration * delta)
-	else:
-		anim_state.travel("Idle")
-		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
-	
-	move_and_slide()
 
 
 func _input(event: InputEvent) -> void:
