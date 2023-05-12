@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://cadl6hjl3d2cy"]
+[gd_scene load_steps=54 format=3 uid="uid://cadl6hjl3d2cy"]
 
 [ext_resource type="Texture2D" uid="uid://dj5fk6vkdvrr2" path="res://assets/sprites/characters/player.png" id="1_4r71g"]
 [ext_resource type="Script" path="res://actors/player/player.gd" id="1_22mku"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://g8ya0cgonyud" path="res://actors/components/state_machine/state_machine.tscn" id="10_31ore"]
 [ext_resource type="Script" path="res://actors/player/states/idle.gd" id="11_prtcq"]
 [ext_resource type="Script" path="res://actors/player/states/walk.gd" id="12_bg1lu"]
+[ext_resource type="Script" path="res://actors/player/states/attack.gd" id="13_5xaby"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x56j"]
 radius = 4.0
@@ -765,5 +766,8 @@ script = ExtResource("11_prtcq")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("12_bg1lu")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("13_5xaby")
 
 [connection signal="health_depleted" from="Statuses/Health" to="." method="_on_health_health_depleted"]

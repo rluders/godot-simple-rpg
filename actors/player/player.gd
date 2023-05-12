@@ -4,7 +4,6 @@ extends Actor
 
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var hitbox_pivot : Marker2D = $HitboxPivot
-@onready var state_machine : StateMachine = $StateMachine
 
 var is_attacking = false
 

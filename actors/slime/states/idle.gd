@@ -10,6 +10,10 @@ func enter(_msg : Dictionary = {}) -> void:
 
 
 func physics_process(delta: float) -> void:
+	if actor.detection_area.has_target():
+		state_machine.change_state("Chase")
+		return
+	
 	var direction : = actor.get_direction()
 	if direction != Vector2.ZERO:
 		state_machine.change_state("Walk")

@@ -16,7 +16,7 @@ func _ready() -> void:
 	for child in get_children():
 		child.state_machine = self
 	
-	current_state.enter()
+	current_state.call_deferred("enter")
 
 
 func _process(delta: float) -> void:
