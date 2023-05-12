@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bbu0oy1yyrdsh"]
+[gd_scene load_steps=30 format=3 uid="uid://dkr4o1jd2byx7"]
 
 [ext_resource type="Script" path="res://actors/slime/slime.gd" id="1_af3cn"]
 [ext_resource type="Texture2D" uid="uid://bwuhwa5tp1o0j" path="res://assets/sprites/characters/slime.png" id="2_tphau"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://12eagfws4yva" path="res://actors/components/status/health.tscn" id="7_qf2c8"]
 [ext_resource type="PackedScene" uid="uid://bb2t8u6p2bqr" path="res://actors/components/combat/damage_indicator.tscn" id="8_sa8ny"]
 [ext_resource type="PackedScene" uid="uid://445a1q2usdpc" path="res://actors/components/combat/healthbar.tscn" id="9_misvh"]
+[ext_resource type="PackedScene" uid="uid://g8ya0cgonyud" path="res://actors/components/state_machine/state_machine.tscn" id="10_n27v2"]
+[ext_resource type="Script" path="res://actors/slime/states/idle.gd" id="11_tybxg"]
+[ext_resource type="Script" path="res://actors/slime/states/chase.gd" id="12_xmhln"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h2ma1"]
 radius = 4.0
@@ -130,8 +133,6 @@ radius = 7.0
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_af3cn")
-acceleration = 200.0
-max_speed = 60.0
 anim_player = NodePath("AnimationPlayer")
 anim_tree = NodePath("AnimationTree")
 
@@ -194,6 +195,13 @@ offset_right = 19.5
 offset_bottom = 13.0
 health_component = NodePath("../Statuses/Health")
 
-[connection signal="target_found" from="DetectionArea" to="." method="_on_detection_area_target_found"]
-[connection signal="target_lost" from="DetectionArea" to="." method="_on_detection_area_target_lost"]
+[node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("10_n27v2")]
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("11_tybxg")
+
+[node name="Chase" type="Node" parent="StateMachine"]
+script = ExtResource("12_xmhln")
+
 [connection signal="health_depleted" from="Statuses/Health" to="." method="_on_health_health_depleted"]
