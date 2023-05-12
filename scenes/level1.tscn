@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://j3igiyyubew2" path="res://objects/nature/big_tree.tscn" id="4_4unio"]
 [ext_resource type="PackedScene" uid="uid://bn1ixpcwhnggq" path="res://objects/nature/bush.tscn" id="5_6q4ip"]
-[ext_resource type="PackedScene" uid="uid://bbu0oy1yyrdsh" path="res://actors/slime/slime.tscn" id="6_j1ocw"]
+[ext_resource type="PackedScene" uid="uid://dkr4o1jd2byx7" path="res://actors/slime/slime.tscn" id="6_j1ocw"]
 [ext_resource type="TileSet" uid="uid://n1q1yw4t2q60" path="res://assets/tileset.tres" id="6_m1sw2"]
 [ext_resource type="PackedScene" uid="uid://bfdhta480x5u" path="res://objects/nature/rock.tscn" id="6_pa6us"]
 [ext_resource type="PackedScene" uid="uid://d4kvw7vot2vt7" path="res://objects/nature/tree.tscn" id="7_87osq"]

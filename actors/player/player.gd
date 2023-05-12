@@ -3,30 +3,16 @@ extends Actor
 
 
 @onready var sprite : Sprite2D = $Sprite2D
-@onready var hitbox_pivot : Marker2D = $HitboxPivot
-
-var is_attacking = false
+@onready var state_machine : StateMachine = $StateMachine
 
 
 func _ready() -> void:
 	anim_tree.active = true
 
 
-func _physics_process(delta: float) -> void:
-	if not is_alive:
-		return
-	if is_attacking:
-		return
-
-
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("attack"):
-		attack()
-
-
-func attack() -> void:
-	is_attacking = true
-	anim_state.travel("Attack")
+		state_machine.change_state("Attack")
 
 
 func get_direction() -> Vector2:

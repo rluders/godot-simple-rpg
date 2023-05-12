@@ -1,8 +1,7 @@
-[gd_scene load_steps=54 format=3 uid="uid://cadl6hjl3d2cy"]
+[gd_scene load_steps=53 format=3 uid="uid://cadl6hjl3d2cy"]
 
 [ext_resource type="Texture2D" uid="uid://dj5fk6vkdvrr2" path="res://assets/sprites/characters/player.png" id="1_4r71g"]
 [ext_resource type="Script" path="res://actors/player/player.gd" id="1_22mku"]
-[ext_resource type="Script" path="res://actors/player/animation.gd" id="3_4v8tb"]
 [ext_resource type="PackedScene" uid="uid://k6axntht1gyu" path="res://actors/components/combat/hitbox.tscn" id="3_fxppv"]
 [ext_resource type="PackedScene" uid="uid://12eagfws4yva" path="res://actors/components/status/health.tscn" id="3_u7rq0"]
 [ext_resource type="PackedScene" uid="uid://b5o1a4ii1yd8d" path="res://actors/components/combat/hurtbox.tscn" id="4_3rkdp"]
@@ -718,7 +717,6 @@ parameters/Walk/blend_position = Vector2(-0.385185, 0.109333)
 libraries = {
 "": SubResource("AnimationLibrary_c3pdp")
 }
-script = ExtResource("3_4v8tb")
 
 [node name="Hurtbox" parent="." node_paths=PackedStringArray("health_component") groups=["player"] instance=ExtResource("4_3rkdp")]
 health_component = NodePath("../Statuses/Health")
@@ -767,7 +765,8 @@ script = ExtResource("11_prtcq")
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("12_bg1lu")
 
-[node name="Attack" type="Node" parent="StateMachine"]
+[node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("hitbox_pivot")]
 script = ExtResource("13_5xaby")
+hitbox_pivot = NodePath("../../HitboxPivot")
 
 [connection signal="health_depleted" from="Statuses/Health" to="." method="_on_health_health_depleted"]

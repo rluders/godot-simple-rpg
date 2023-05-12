@@ -5,13 +5,9 @@ extends Actor
 @onready var detection_area : DetectionArea = $DetectionArea
 
 
-func _physics_process(delta: float) -> void:
-	if not is_alive:
-		return
-
-
 func _on_health_health_depleted() -> void:
 	is_alive = false
+	
 	# TODO How can I use anim_state here?
 	anim_tree.active = false
 	anim_player.play("death")
