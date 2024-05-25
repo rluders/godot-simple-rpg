@@ -23,9 +23,9 @@ func _on_level_changed(_old_level: String, _new_level: String) -> void:
 
 
 func setup_camera() -> void:
-	var map_rect : = tilemap.get_used_rect()
-	var tile_size : = tilemap.cell_quadrant_size
-	var world_size_in_px : = map_rect.size * tile_size
+	var map_rect = tilemap.get_used_rect()
+	var tile_size : int = tilemap.cell_quadrant_size
+	var world_size_in_px : Vector2 = Vector2(map_rect.size.x, map_rect.size.y) * Vector2(tile_size, tile_size)
 	
 	limit_top = -tile_size
 	limit_left = limit_top
